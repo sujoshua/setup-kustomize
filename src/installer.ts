@@ -14,6 +14,7 @@ const githubToken = core.getInput('github-token')
 const failFast = core.getBooleanInput('fail-fast')
 
 let options: OctokitOptions = {
+  baseUrl: 'https://api.github.com',
   throttle: {
     onRateLimit: (retryAfter: Number, opts: OctokitOptions) => {
       core.warning(
